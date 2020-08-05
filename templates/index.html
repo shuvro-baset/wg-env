@@ -46,7 +46,8 @@
             <div class="col-md-12">
 
                 <div id="mdb-lightbox-ui">
-                    <h1 class="text-center">Pizza Gallery</h1>
+                    <h1 class="text-center text-box">Pizza Gallery</h1>
+                    <br><br>
                 </div>
 
                 <div class="mdb-lightbox no-margin">
@@ -110,7 +111,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-center my-3">meatza1</h3>
+                        <h3 class="text-center my-3">meatza</h3>
 
                     </figure>
 
@@ -141,7 +142,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-center my-3">sausage-peppers1</h3>
+                        <h3 class="text-center my-3">sausage-peppers</h3>
 
                     </figure>
 
@@ -233,7 +234,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-center my-3">white-out1</h3>
+                        <h3 class="text-center my-3">white-out</h3>
 
                     </figure>
 
@@ -281,7 +282,8 @@
             <div class="col-md-12">
 
                 <div id="mdb-lightbox-ui">
-                    <h1 class="text-center">Others Gallery</h1>
+                    <h1 class="text-center text-box">Others Gallery</h1>
+                    <br><br>
                 </div>
 
                 <div class="mdb-lightbox no-margin">
@@ -290,7 +292,7 @@
 
                         <div class="box">
                             <div class="imgBox">
-                                <img alt="picture" src="{% static 'images/others/bread sticks.jpg' %}"
+                                <img alt="picture" src="{% static 'images/others/breadsticks.jpg' %}"
                                      class="img-fluid">
                             </div>
                             <div class="details">
@@ -306,7 +308,7 @@
                     <figure class="col-md-3 sec-gallery">
                         <div class="box">
                             <div class="imgBox">
-                                <img alt="picture" src="{% static 'images/others/cinn sticks.jpg' %}"
+                                <img alt="picture" src="{% static 'images/others/cinnstick.jpg' %}"
                                      class="img-fluid"/>
                             </div>
                             <div class="details">
@@ -322,7 +324,7 @@
 
                         <div class="box">
                             <div class="imgBox">
-                                <img alt="picture" src="{% static 'images/others/salad-11.png' %}" class="img-fluid"/>
+                                <img alt="picture" src="{% static 'images/others/salad.jpg' %}" class="img-fluid"/>
                             </div>
                             <div class="details">
                                 <div class="content">
@@ -330,14 +332,14 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-center my-3">salad-11</h3>
+                        <h3 class="text-center my-3">salad</h3>
 
                     </figure>
 
                     <figure class="col-md-3 sec-gallery">
                         <div class="box">
                             <div class="imgBox">
-                                <img alt="picture" src="{% static 'images/others/wings 2.jpg' %}" class="img-fluid"/>
+                                <img alt="picture" src="{% static 'images/others/wings.jpg' %}" class="img-fluid"/>
                             </div>
                             <div class="details">
                                 <div class="content">
@@ -345,7 +347,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-center my-3">wings 2</h3>
+                        <h3 class="text-center my-3">wings</h3>
 
                     </figure>
 
@@ -364,7 +366,10 @@
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center text-box"> 1000 Degrees Pizza of Winter Garden (only) - NBA</h1>
+                <br><br>
 
+            </div>
+            <div class="col-12 div-box">
                 <h4>Order form exclusively for the NBA</h4>
 
                 <h4>Our pizzas are authentic Neapolitan style pizza coming in the 10" and the 14" style.</h4>
@@ -385,12 +390,190 @@
                     Orders should be 24 -48 hours in advance. Individual orders, please complete the form and we will
                     message or call you to confirm.
                 </p>
+
+            </div>
+
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-12">
+                <form action="/action_page.php">
+                    <h2>Before Order a pizza Please fill up this form.</h2>
+                    <p>Email is only required for invoicing and receipt. Will not be used otherwise or shared without
+                        your permission.
+                        Orders should be 24 -48 hours in advance. Individual orders, please complete the form and we
+                        will message or call you to confirm. </p>
+                    <div class="form-group">
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control required" id="email"
+                               placeholder="Enter your valid email">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control required" id="name" placeholder="Enter your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number:</label>
+                        <input type="number" class="form-control required" id="phone_number"
+                               placeholder="Enter your contact Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="delivery_date">Delivery Date:</label>
+                        <input type="date" class="form-control required" id="delivery_date"
+                               placeholder="Select Delivery Date">
+                    </div>
+                    <div class="form-group">
+                        <label for="delivery_time">Delivery Time:</label>
+                        <input type="time" class="form-control required" id="delivery_time"
+                               placeholder="Select Delivery Time">
+                    </div>
+                    <div class="form-group">
+                        <label for="drop_of_location">Drop off location :</label>
+                        <select name="drop_of_location" id="drop_of_location">
+                            <option value="coronado_el_mercado">Coronado - El Mercado</option>
+                            <option value="coronado_maya_grill">Coronado - Maya Grill</option>
+                            <option value="coronado_team_meal_room">Coronado - Team Meal Room</option>
+                            <option value="grand_floridian">Grand Floridian</option>
+                            <option value="yacht_club">Yacht Club</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h3 class="text-center"> Drop-off Info (Take Note)</h3>
+                        <p>
+                        <h6>For Teams: Your order will be available at the Food Drop-Off point next to your Team Meal
+                            Room.</h6>
+
+                        <h6> For on-campus staff: Your order will be available at the Staff Food Drop-Off point at the
+                            Coronado, located at Mercado.</h6>
+
+                        <h6> For Referees: Your order will be available at the Food Drop-Off point in the Referee Meal
+                            Room.</h6>
+
+                        <h6>For Media:Your order will be available at the Media Food Drop-Off point at the Coronado,
+                            located next to Maya Grill entrance.</h6>
+                        </p>
+                        <label for="drop_of_contact">Drop off Contact (if someone different):</label>
+                        <input type="text" class="form-control" id="drop_of_contact">
+                    </div>
+                    <div class="form-group">
+                        <label for="team">Team:</label>
+                        <select name="team" id="team">
+                            <option value="coronado_el_mercado">1. On-campus Staff</option>
+                            <option value="coronado_maya_grill">2. Media</option>
+                            <option value="coronado_team_meal_room">3. Referees</option>
+                            <option value="grand_floridian">4. Boston Celtics</option>
+                            <option value="yacht_club">5. Brooklyn Nets</option>
+                            <option value="yacht_club">6. Dallas Mavericks</option>
+                            <option value="yacht_club">7. Denver Nuggets</option>
+                            <option value="yacht_club">8. Houston Rockets</option>
+                            <option value="yacht_club">9. Indiana Pacers</option>
+                            <option value="yacht_club">10. Los Angels Clippers</option>
+                            <option value="yacht_club">11. Los Angels Lakers</option>
+                            <option value="yacht_club">12. Memphis Grizzlies</option>
+                            <option value="yacht_club">13. Miami Heat</option>
+                            <option value="yacht_club">14. Milwaukee Bucks</option>
+                            <option value="yacht_club">15. New Orleans Pelicans</option>
+                            <option value="yacht_club">16. Oklahoma City Thunder</option>
+                            <option value="yacht_club">17. Orlando Magic</option>
+                            <option value="yacht_club">18. Philadelphia 76ers</option>
+                            <option value="yacht_club">19. Phoenix Suns</option>
+                            <option value="yacht_club">20. Portland Trail Blazers</option>
+                            <option value="yacht_club">21. Sacramento Kings</option>
+                            <option value="yacht_club">22. San Antonio Spurs</option>
+                            <option value="yacht_club">23. Toronto Raptors</option>
+                            <option value="yacht_club">24. Utah Jazz</option>
+                            <option value="yacht_club">25. washington Wizards</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h1 class="text-center">What Would You Like?</h1>
+                        <h5>Make your order selections below. Be sure to let us know of any special instructions and/or
+                            quantities after you have made your selection.</h5>
+                        <h5>
+                            You will receive confirmation of order and an invoice 24 hours after your order is
+                            submitted.</h5>
+                    </div>
+                    <br><br>
+                    <div class="col-12">
+                        <h4>Order - Pizza </h4>
+                        <br>
+                        <div class="col-6 float-left">
+                            <input type="checkbox" name="vehicle1" value="Bike">
+                            <label for="1"> Tuscan Chicken Pizza 10" $9.95</label><br>
+                            <input type="checkbox" name="vehicle2" value="Car">
+                            <label for="3"> White Out 10" $9.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="5">Hawaiian Fire 10" $9.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="7"> Margherita 10" $8.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="9"> Classic New Yorker 10" $8.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="11"> Tony Pepperoni 10" $8.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="13"> Johnny The Meatball 10" $8.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="15"> Quattro Formaggio 10" $9.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="17"> Buffalo Chicken 10" $9.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="19"> Sausage & Peppers 10" $9.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="21"> Smokey Pollo 10" $9.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="23"> The Philly 10" $9.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="25"> The Meatza 10" $9.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="27"> Bacon Mac & Cheese 10" $9.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="29"> Lasagna 10" $9.95</label><br>
+                        </div>
+                        <div class="col-6 float-left">
+                             <input type="checkbox" name="vehicle1" value="Bike">
+                            <label for="2"> Tuscan Chicken Pizza  14" $17.95</label><br>
+                            <input type="checkbox" name="vehicle2" value="Car">
+                            <label for="4"> White Out 14" $17.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="6"> Hawaiian Fire 14" $17.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="8"> Margherita 14" $16.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="10"> Classic New Yorker 14" $16.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="12"> Tony Pepperoni 14" $16.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="14"> Sausage & Peppers 14" $17.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="16"> Quattro Formaggio 14" $17.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="18"> Buffalo Chicken 14" $17.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="20"> I have a boat</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="22"> Smokey Pollo 14" $17.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="24"> The Philly 14" $17.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="26"> The Meatza 14" $17.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="28"> Bacon Mac & Cheese 14" $17.95</label><br>
+                            <input type="checkbox" name="vehicle3" value="Boat" >
+                            <label for="30"> Lasagna 14" $17.95</label><br>
+                        </div>
+
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
 </section>
 
+
+<footer>
+    <h6 class="text-center bg-dark text-light">© 2020 - 2020 Baset.</h6>
+</footer>
 <script src="{% static 'gallery.js' %}"></script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

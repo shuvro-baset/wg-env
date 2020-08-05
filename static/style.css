@@ -155,11 +155,16 @@ button{
 }
 .form-section{
     padding-top: 30px;
-    background-color: aqua;
 }
 .text-box{
-    /*border: 1px solid black;*/
+    color: white;
+    padding: 10px;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px 2px gray;
-    background-color: white;
+    box-shadow: 2px 2px 2px 2px #aaa6a6;
+    background-color: black;
+}
+.div-box{
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px darkgrey;
 }
