@@ -153,3 +153,13 @@ button{
     margin: 10px 0 0;
     padding: 0;
 }
+.form-section{
+    padding-top: 30px;
+    background-color: aqua;
+}
+.text-box{
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px gray;
+    background-color: white;
+}
