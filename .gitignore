@@ -7,8 +7,9 @@ __pycache__/
 
 # IDE
 .vscode
-.idea
 .idea/*
+.idea
+
 
 
 # C extensions
@@ -63,7 +64,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-db.sqlite3
+#db.sqlite3
 
 # Flask stuff:
 instance/
@@ -120,7 +121,6 @@ venv.bak/
 
 # Logs
 logs
-*.log
 
 # Runtime data
 pids
@@ -152,5 +152,6 @@ api/temp
 
 # Temporary folders
 temp
-.idea
 .idea/workspace.xml
+
+ngrok.exe
