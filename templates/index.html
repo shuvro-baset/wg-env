@@ -22,14 +22,14 @@
     <div class="content">
         <small style="font-size: 20px;">Welcome to our</small>
         <h1>1000 Degrees Pizza of Winter Garden </h1>
-        {% if messages %}
-            <ul class="container messages">
-                {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
     </div>
+    {% if messages %}
+        <div class="container alert alert-danger text-center w-50 font-weight-bold" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
     <div class="bubbles">
         <img src="{% static 'images/bubble.png' %}" alt="">
         <img src="{% static 'images/bubble.png' %}" alt="">
@@ -405,7 +405,8 @@
                 will message or call you to confirm. </p>
             <section class="shadow p-3 mb-5 bg-white rounded">
                 <div class="form-group ">
-                    <label for="email"><label class="text-danger font-weight-bold">*</label> Email address:</label>
+                    <label for="email" class="font-weight-bold"><label class="text-danger font-weight-bold">*</label>Email
+                        address:</label>
                     <input type="email" class="form-control required bg-dark text-light" name="email" id="email"
                            placeholder="Enter your valid email" required>
                 </div>
@@ -418,19 +419,22 @@
                 <div class="form-group">
                     <label for="phone_number"><label class="text-danger font-weight-bold">*</label>Phone
                         Number:</label>
-                    <input type="tel" class="form-control required bg-dark text-light" name="phone_number" id="phone_number"
-                           placeholder="Enter your contact Number" required>
+                    <input type="tel" class="form-control required bg-dark text-light" name="phone_number"
+                           id="phone_number"
+                           placeholder="Enter your contact Number" maxlength="12" minlength="11" required>
                 </div>
                 <div class="form-group">
                     <label for="delivery_date"><label class="text-danger font-weight-bold">*</label>Delivery
                         Date:</label>
-                    <input type="date" class="form-control required bg-dark text-light" name="delivery_date" id="delivery_date"
+                    <input type="date" class="form-control required bg-dark text-light" name="delivery_date"
+                           id="delivery_date"
                            placeholder="Select Delivery Date" required>
                 </div>
                 <div class="form-group">
                     <label for="delivery_time"><label class="text-danger font-weight-bold">*</label>Delivery
                         Time:</label>
-                    <input type="time" class="form-control required bg-dark text-light" name="delivery_time" id="delivery_time"
+                    <input type="time" class="form-control required bg-dark text-light" name="delivery_time"
+                           id="delivery_time"
                            placeholder="Select Delivery Time" required>
                 </div>
                 <div class="form-group">
@@ -524,152 +528,152 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="1"> Tuscan Chicken Pizza 10" $9.95</label></td>
-                                <td><input type="text" placeholder="Enter Quantity"></td>
+                                <td><input type="number" placeholder="Enter Quantity" name="pizzas_qty" min="1"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="2"> Tuscan Chicken Pizza 14" $17.95</label></td>
-                                <td><input type="text" placeholder="Enter Quantity"></td>
+                                <td><input type="number" placeholder="Enter Quantity" name="pizzas_qty" min="1"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="3"> White Out 10" $9.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="4"> White Out 14" $17.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="5">Hawaiian Fire 10" $9.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="6"> Hawaiian Fire 14" $17.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="7"> Margherita 10" $8.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="8"> Margherita 14" $16.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="9"> Classic New Yorker 10" $8.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="10"> Classic New Yorker 14" $16.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="11"> Tony Pepperoni 10" $8.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="12"> Tony Pepperoni 14" $16.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="13"> Johnny The Meatball 10" $8.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="14"> Sausage & Peppers 14" $17.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="15"> Quattro Formaggio 10" $9.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="16"> Quattro Formaggio 14" $17.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="17"> Buffalo Chicken 10" $9.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="18"> Buffalo Chicken 14" $17.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="19"> Sausage & Peppers 10" $9.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="20"> I have a boat</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="21"> Smokey Pollo 10" $9.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="22"> Smokey Pollo 14" $17.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="23"> The Philly 10" $9.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="24"> The Philly 14" $17.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="25"> The Meatza 10" $9.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="26"> The Meatza 14" $17.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="27"> Bacon Mac & Cheese 10" $9.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="28"> Bacon Mac & Cheese 14" $17.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="29"> Lasagna 10" $9.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="vehicle3" value="Bike">
+                                <td><input type="checkbox" name="pizzas" value="Bike">
                                     <label for="30"> Lasagna 14" $17.95</label></td>
                                 <td><input type="text" placeholder="Enter Quantity"></td>
                             </tr>
@@ -690,9 +694,10 @@
                                 1. Gluten Free 10"
                             </label>
                         </div>
-                        <div class="col-1 float-left"><input type="checkbox" name="optradio"></div>
+                        <div class="col-1 float-left"><input type="checkbox" name="gluten_cauliflower"></div>
                         <div class="col-8 float-left">
-                            <input type="text" name="qty" placeholder=" If yes enter quantity">
+                            <input type="number" name="gluten_cauliflower_qty" placeholder=" If yes enter quantity"
+                                   min="1">
                         </div>
                     </div>
                 </div>
@@ -734,9 +739,9 @@
                                 1. Cheesy Garlic Bread $5.95
                             </label>
                         </div>
-                        <div class="col-1 float-left"><input type="checkbox" name="optradio"></div>
+                        <div class="col-1 float-left"><input type="checkbox" name="bread"></div>
                         <div class="col-7 float-left">
-                            <input type="text" name="qty" placeholder=" If yes enter quantity">
+                            <input type="number" name="bread_qty" placeholder=" If yes enter quantity" min="1">
                         </div>
                     </div>
                 </div>
@@ -779,9 +784,9 @@
                                 1. 6 Piece Traditional Wings $7.95
                             </label>
                         </div>
-                        <div class="col-1 float-left"><input type="checkbox" name="optradio"></div>
+                        <div class="col-1 float-left"><input type="checkbox" name="wing"></div>
                         <div class="col-7 float-left">
-                            <input type="text" name="qty" placeholder=" If yes enter quantity">
+                            <input type="number" name="wing_qty" placeholder=" If yes enter quantity" min="1">
                         </div>
                     </div>
                 </div>
@@ -824,9 +829,9 @@
                                 1. Bourbon BBQ
                             </label>
                         </div>
-                        <div class="col-1 float-left"><input type="checkbox" name="optradio"></div>
+                        <div class="col-1 float-left"><input type="checkbox" name="wings_sauce"></div>
                         <div class="col-7 float-left">
-                            <input type="text" name="qty" placeholder=" If yes enter quantity">
+                            <input type="number" name="wings_sauce_qty" placeholder=" If yes enter quantity" min="1">
                         </div>
                     </div>
                 </div>
@@ -920,9 +925,9 @@
                                 1. Chicken Caesar Salad $8.95
                             </label>
                         </div>
-                        <div class="col-1 float-left"><input type="checkbox" name="optradio"></div>
+                        <div class="col-1 float-left"><input type="checkbox" name="salad"></div>
                         <div class="col-7 float-left">
-                            <input type="text" name="qty" placeholder=" If yes enter quantity">
+                            <input type="number" name="salad_qty" placeholder=" If yes enter quantity" min="1">
                         </div>
                     </div>
                 </div>
@@ -992,9 +997,9 @@
                                 1. Blue Cheese Dressing
                             </label>
                         </div>
-                        <div class="col-1 float-left"><input type="checkbox" name="optradio"></div>
+                        <div class="col-1 float-left"><input type="checkbox" name="salad_dressing"></div>
                         <div class="col-7 float-left">
-                            <input type="text" name="qty" placeholder=" If yes enter quantity">
+                            <input type="number" name="salad_dressing_qty" placeholder=" If yes enter quantity" min="1">
                         </div>
                     </div>
                 </div>
@@ -1076,9 +1081,9 @@
                                 1. Cinnamon Sticks $5.99
                             </label>
                         </div>
-                        <div class="col-1 float-left"><input type="checkbox" name="optradio"></div>
+                        <div class="col-1 float-left"><input type="checkbox" name="dessert"></div>
                         <div class="col-6 float-left">
-                            <input type="text" name="qty" placeholder=" If yes enter quantity">
+                            <input type="number" name="dessert_qty" placeholder=" If yes enter quantity" min="1">
                         </div>
                     </div>
                 </div>
@@ -1158,7 +1163,7 @@
                     </div>
 
 
-                    <textarea id="w3review" name="w3review" rows="4" cols="100">
+                    <textarea id="w3review" name="special_request" rows="4" cols="100">
 
                         </textarea>
                 </div>
@@ -1182,7 +1187,6 @@
         </form>
     </div>
 </div>
-
 
 
 <footer>

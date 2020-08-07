@@ -12,12 +12,17 @@ def home(request):
         delivery_date = request.POST.get('delivery_date', None)
         delivery_time = request.POST.get('delivery_time', None)
         drop_of_location = request.POST.get('drop_of_location', None)
-        team = request.POST.get('team')
-        pizzas = request.POST.getlist('vehicle3', None)
+        team = request.POST.get('team', None)
+        pizzas = request.POST.getlist('pizzas', None)
+        pizzas_qty = request.POST.getlist('pizzas_qty', None)
         pizzas_length = len(pizzas)
-        if pizzas == 0:
-            messages.add_message(request, messages.warning, 'Please select a pizza first.')
+        pizzas_qty_length = len(pizzas_qty)
+        if pizzas_length == 0:
+            messages.add_message(request, messages.WARNING, 'Please select a pizza first.')
             return render(request, 'index.html')
+        # elif pizzas_length != pizzas_qty_length:
+        #     messages.add_message(request, messages.WARNING, 'Pizza Quantity not given properly!')
+        #     return render(request, 'index.html')
 
-        print(email, name, len(pizzas))
+        print(pizzas_qty, len(pizzas))
     return render(request, 'index.html')
