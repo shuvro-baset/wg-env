@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 
+from .shortcuts import check_food_qty_len
+
 
 def home(request):
     dessert_ins = Dessert.objects.all().order_by('id')
@@ -25,6 +27,12 @@ def home(request):
     }
 
     if request.method == 'POST':
+        # check post-values
+        is_ok, error_message = check_food_qty_len(request)
+        if is_ok is False:
+            messages.add_message(request, messages.WARNING, error_message)
+            return render(request, 'index.html', context)
+
         email = request.POST.get('email', None)
         name = request.POST.get('name', None)
         phone_number = request.POST.get('phone_number', None)
@@ -35,15 +43,15 @@ def home(request):
 
         pizzas = request.POST.getlist('pizzas', None)
         pizzas_qty = request.POST.getlist('pizzas_qty', None)
-        pizzas_length = len(pizzas)
-        pizzas_qty_length = len(pizzas_qty)
-        if pizzas_length == 0:
-            messages.add_message(request, messages.WARNING, 'Please select a pizza and quantity first.')
+        # pizzas_length = len(pizzas)
+        # pizzas_qty_length = len(pizzas_qty)
+        if len(pizzas) == 0:
+            messages.add_message(request, messages.WARNING, 'Please select at least one pizza and quantity first.')
             return render(request, 'index.html', context)
-        # elif pizzas_length != pizzas_qty_length:
+        # elif len(pizzas) != len(pizzas_qty):
         #     messages.add_message(request, messages.WARNING, 'Pizza Quantity not given properly!')
         #     return render(request, 'index.html', context)
 
-        print(request.POST)
+        # print(request.POST)
 
     return render(request, 'index.html', context)

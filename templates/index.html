@@ -27,6 +27,8 @@
         <div class="container alert alert-danger text-center w-50 font-weight-bold" role="alert">
             {% for message in messages %}
                 {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
             {% endfor %}
         </div>
     {% endif %}
@@ -700,7 +702,8 @@
                                     {{ forloop.counter }}. {{ gluten_cauliflower.name }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="gluten_cauliflower"></div>
+                            <div class="col-1 float-left"><input type="checkbox" name="gluten_cauliflower"
+                                                                 value="{{ gluten_cauliflower.id }}"></div>
                             <div class="col-8 float-left">
                                 <input type="number" name="gluten_cauliflower_qty" placeholder=" If yes enter quantity"
                                        min="1">
@@ -746,7 +749,8 @@
                                     {{ forloop.counter }}. {{ bread.name }} ${{ bread.price }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="bread"></div>
+                            <div class="col-1 float-left"><input type="checkbox" name="bread" value="{{ bread.id }}">
+                            </div>
                             <div class="col-7 float-left">
                                 <input type="number" name="bread_qty" placeholder=" If yes enter quantity" min="1">
                             </div>
@@ -792,7 +796,8 @@
                                     {{ forloop.counter }}. {{ wing.name }} ${{ wing.price }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="wing"></div>
+                            <div class="col-1 float-left"><input type="checkbox" name="wing" value="{{ wing.id }}">
+                            </div>
                             <div class="col-7 float-left">
                                 <input type="number" name="wing_qty" placeholder=" If yes enter quantity" min="1">
                             </div>
@@ -839,7 +844,8 @@
                                     {{ forloop.counter }}. {{ wing_sauce.name }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="wings_sauce"></div>
+                            <div class="col-1 float-left"><input type="checkbox" name="wings_sauce"
+                                                                 value="{{ wing_sauce.id }}"></div>
                             <div class="col-7 float-left">
                                 <input type="number" name="wings_sauce_qty" placeholder=" If yes enter quantity"
                                        min="1">
@@ -938,7 +944,8 @@
                                     {{ forloop.counter }}. {{ salad.name }} ${{ salad.price }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="salad"></div>
+                            <div class="col-1 float-left"><input type="checkbox" name="salad" value="{{ salad.id }}">
+                            </div>
                             <div class="col-7 float-left">
                                 <input type="number" name="salad_qty" placeholder=" If yes enter quantity" min="1">
                             </div>
@@ -1011,7 +1018,8 @@
                                     {{ forloop.counter }}. {{ salad_dressing.name }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="salad_dressing"></div>
+                            <div class="col-1 float-left"><input type="checkbox" name="salad_dressing"
+                                                                 value="{{ salad_dressing.id }}"></div>
                             <div class="col-7 float-left">
                                 <input type="number" name="salad_dressing_qty" placeholder=" If yes enter quantity"
                                        min="1">
@@ -1097,7 +1105,8 @@
                                     {{ forloop.counter }}. {{ dessert.name }} ${{ dessert.price }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="dessert"></div>
+                            <div class="col-1 float-left"><input type="checkbox" name="dessert"
+                                                                 value="{{ dessert.id }}"></div>
                             <div class="col-6 float-left">
                                 <input type="number" name="dessert_qty" placeholder=" If yes enter quantity" min="1">
                             </div>
