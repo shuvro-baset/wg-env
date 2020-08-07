@@ -28,7 +28,7 @@ def home(request):
 
     if request.method == 'POST':
         # check post-values
-        is_ok, error_message = check_food_qty_len(request)
+        is_ok, error_message, data = check_food_qty_len(request)
         if is_ok is False:
             messages.add_message(request, messages.WARNING, error_message)
             return render(request, 'index.html', context)
@@ -40,18 +40,32 @@ def home(request):
         delivery_time = request.POST.get('delivery_time', None)
         drop_of_location = request.POST.get('drop_of_location', None)
         team = request.POST.get('team', None)
+        user_personal_data = {
+            'email': email,
+            'name': name,
+            'phone_number': phone_number,
+            'delivery_date': delivery_date,
+            'delivery_time': delivery_time,
+            'drop_of_location': drop_of_location,
+            'team': team
+        }
 
-        pizzas = request.POST.getlist('pizzas', None)
-        pizzas_qty = request.POST.getlist('pizzas_qty', None)
-        # pizzas_length = len(pizzas)
-        # pizzas_qty_length = len(pizzas_qty)
-        if len(pizzas) == 0:
-            messages.add_message(request, messages.WARNING, 'Please select at least one pizza and quantity first.')
-            return render(request, 'index.html', context)
+        # pizzas = request.POST.getlist('pizzas', None)
+        # pizzas_qty = request.POST.getlist('pizzas_qty', None)
+        # if len(pizzas) == 0:
+        #     messages.add_message(request, messages.WARNING, 'Please select at least one pizza and quantity first.')
+        #     return render(request, 'index.html', context)
         # elif len(pizzas) != len(pizzas_qty):
         #     messages.add_message(request, messages.WARNING, 'Pizza Quantity not given properly!')
         #     return render(request, 'index.html', context)
 
         # print(request.POST)
+        request.session['user_personal_data'] = user_personal_data
+        request.session['data'] = data
+        return render(request, 'invoice.html', context)
 
     return render(request, 'index.html', context)
+
+
+def invoice_payment(request):
+    return render(request, 'invoice.html', {})

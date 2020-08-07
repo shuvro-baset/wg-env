@@ -28,7 +28,7 @@
             {% for message in messages %}
                 {{ message }}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                aria-hidden="true">&times;</span></button>
+                        aria-hidden="true">&times;</span></button>
             {% endfor %}
         </div>
     {% endif %}
@@ -406,41 +406,41 @@
                 Orders should be 24 -48 hours in advance. Individual orders, please complete the form and we
                 will message or call you to confirm. </p>
             <section class="shadow p-3 mb-5 bg-white rounded">
-                <div class="form-group ">
-                    <label for="email" class="font-weight-bold"><label
-                            class="text-danger font-weight-bold">*</label>Email
-                        address:</label>
-                    <input type="email" class="form-control required bg-dark text-light" name="email"
-                           id="email"
-                           placeholder="Enter your valid email" required>
-                </div>
-                <div class="form-group">
-                    <label for="name"><label class="text-danger font-weight-bold">*</label>Name:</label>
-                    <input type="text" class="form-control required bg-dark text-light" name="name" id="name"
-                           placeholder="Enter your Name"
-                           minlength="4" maxlength="30" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone_number"><label class="text-danger font-weight-bold">*</label>Phone
-                        Number:</label>
-                    <input type="tel" class="form-control required bg-dark text-light" name="phone_number"
-                           id="phone_number"
-                           placeholder="Enter your contact Number" maxlength="12" minlength="11" required>
-                </div>
-                <div class="form-group">
-                    <label for="delivery_date"><label class="text-danger font-weight-bold">*</label>Delivery
-                        Date:</label>
-                    <input type="date" class="form-control required bg-dark text-light" name="delivery_date"
-                           id="delivery_date"
-                           placeholder="Select Delivery Date" required>
-                </div>
-                <div class="form-group">
-                    <label for="delivery_time"><label class="text-danger font-weight-bold">*</label>Delivery
-                        Time:</label>
-                    <input type="time" class="form-control required bg-dark text-light" name="delivery_time"
-                           id="delivery_time"
-                           placeholder="Select Delivery Time" required>
-                </div>
+                {#                <div class="form-group ">#}
+                {#                    <label for="email" class="font-weight-bold"><label#}
+                {#                            class="text-danger font-weight-bold">*</label>Email#}
+                {#                        address:</label>#}
+                {#                    <input type="email" class="form-control required bg-dark text-light" name="email"#}
+                {#                           id="email"#}
+                {#                           placeholder="Enter your valid email" required>#}
+                {#                </div>#}
+                {#                <div class="form-group">#}
+                {#                    <label for="name"><label class="text-danger font-weight-bold">*</label>Name:</label>#}
+                {#                    <input type="text" class="form-control required bg-dark text-light" name="name" id="name"#}
+                {#                           placeholder="Enter your Name"#}
+                {#                           minlength="4" maxlength="30" required>#}
+                {#                </div>#}
+                {#                <div class="form-group">#}
+                {#                    <label for="phone_number"><label class="text-danger font-weight-bold">*</label>Phone#}
+                {#                        Number:</label>#}
+                {#                    <input type="tel" class="form-control required bg-dark text-light" name="phone_number"#}
+                {#                           id="phone_number"#}
+                {#                           placeholder="Enter your contact Number" maxlength="12" minlength="11" required>#}
+                {#                </div>#}
+                {#                <div class="form-group">#}
+                {#                    <label for="delivery_date"><label class="text-danger font-weight-bold">*</label>Delivery#}
+                {#                        Date:</label>#}
+                {#                    <input type="date" class="form-control required bg-dark text-light" name="delivery_date"#}
+                {#                           id="delivery_date"#}
+                {#                           placeholder="Select Delivery Date" required>#}
+                {#                </div>#}
+                {#                <div class="form-group">#}
+                {#                    <label for="delivery_time"><label class="text-danger font-weight-bold">*</label>Delivery#}
+                {#                        Time:</label>#}
+                {#                    <input type="time" class="form-control required bg-dark text-light" name="delivery_time"#}
+                {#                           id="delivery_time"#}
+                {#                           placeholder="Select Delivery Time" required>#}
+                {#                </div>#}
                 <div class="form-group">
                     <label for="drop_of_location"><label class="text-danger font-weight-bold">*</label>Drop off
                         location :</label>
@@ -536,7 +536,8 @@
                                     <td><input type="checkbox" name="pizzas" value="{{ pizza.id }}">
                                         <label for="{{ forloop.counter }}"> {{ pizza.name }} ${{ pizza.price }}</label>
                                     </td>
-                                    <td><input type="number" placeholder="Enter Quantity" name="pizzas_qty" min="1">
+                                    <td><input type="number" placeholder="Enter Quantity"
+                                               name="pizzas_qty_{{ pizza.id }}" min="1">
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -705,7 +706,8 @@
                             <div class="col-1 float-left"><input type="checkbox" name="gluten_cauliflower"
                                                                  value="{{ gluten_cauliflower.id }}"></div>
                             <div class="col-8 float-left">
-                                <input type="number" name="gluten_cauliflower_qty" placeholder=" If yes enter quantity"
+                                <input type="number" name="gluten_cauliflower_qty_{{ gluten_cauliflower.id }}"
+                                       placeholder=" If yes enter quantity"
                                        min="1">
                             </div>
                         </div>
