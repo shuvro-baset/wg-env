@@ -7,6 +7,8 @@
       <change beforePath="$PROJECT_DIR$/pizza/shortcuts.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/shortcuts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pizza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wg_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wg_project/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +103,8 @@
       <workItem from="1596832843853" duration="7575000" />
       <workItem from="1596874275622" duration="2360000" />
       <workItem from="1596878574487" duration="1103000" />
-      <workItem from="1596881565001" duration="1286000" />
+      <workItem from="1596881565001" duration="3271000" />
+      <workItem from="1596907096380" duration="1277000" />
     </task>
     <servers />
   </component>

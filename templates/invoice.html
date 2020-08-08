@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 
 
 <!DOCTYPE html>
@@ -22,43 +22,46 @@
         <div class="col-12">
             <h2 class="text-center"><b>1000 Degrees Pizza of Winter Garden</b></h2>
             <br><br>
-            <h4>Dear Customer (customer name)</h4>
-            <p>Before confirm your order, Please check your order one more time. If everything is okay then press order
-                now button</p>
-            <br><br>
-            <table class="table table-borderless div-box">
-                <h3 class="text-center"><b>Personal Information</b></h3>
-                <tbody>
-                <tr>
-                    <td>Customer Name</td>
-                    <td>abcd</td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>Phone Number</td>
-                    <td>******</td>
-                </tr>
-                <tr>
-                    <td>Delivery Time</td>
-                    <td>time</td>
-                </tr>
-                <tr>
-                    <td>Delivery Date</td>
-                    <td>******</td>
-                </tr>
-                <tr>
-                    <td>Location</td>
-                    <td>******</td>
-                </tr>
-                <tr>
-                    <td>Team</td>
-                    <td>******</td>
-                </tr>
-                </tbody>
-            </table>
+            {% if request.session.user_personal_data %}
+                <h4>Dear Customer ({{ request.session.user_personal_data.name }})</h4>
+                <p>Before confirm your order, Please check your order one more time. If everything is okay then press
+                    order
+                    now button</p>
+                <br><br>
+                <table class="table table-borderless div-box">
+                    <h3 class="text-center"><b>Personal Information</b></h3>
+                    <tbody>
+                    <tr>
+                        <td>Customer Name</td>
+                        <td>{{ request.session.user_personal_data.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{ request.session.user_personal_data.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td>{{ request.session.user_personal_data.phone_number }}</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery Time</td>
+                        <td>{{ request.session.user_personal_data.delivery_time }}</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery Date</td>
+                        <td>{{ request.session.user_personal_data.delivery_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>{{ request.session.user_personal_data.drop_of_location }}</td>
+                    </tr>
+                    <tr>
+                        <td>Team</td>
+                        <td>{{ request.session.user_personal_data.team }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            {% endif %}
 
         </div>
     </div>
@@ -66,7 +69,7 @@
 
     <div class="row">
         <div class="col-12">
-              <h3 class="text-center"><b>Order Details</b></h3>
+            <h3 class="text-center"><b>Order Details</b></h3>
 
             <table class="table table-borderless div-box">
                 <thead>
@@ -78,16 +81,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td> 1</td>
-                    <td>pizza</td>
-                    <td>qauntity</td>
-                    <td>10.5$</td>
-                </tr>
+                {% if request.session.food_data %}
+                    {% for data in request.session.food_data %}
+                        <tr>
+                            <td> {{ forloop.counter }}</td>
+                            <td>{{ data.name }}</td>
+                            <td>{{ data.qty }}</td>
+                            <td>{{ data.total_price }}$</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
 
                 <tr>
                     <td colspan="3">Total Price</td>
-                    <td>******</td>
+                    <td>{{ request.session.total_food_price }}$</td>
                 </tr>
                 </tbody>
             </table>

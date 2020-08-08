@@ -47,8 +47,8 @@ def home(request):
             'email': email,
             'name': name,
             'phone_number': phone_number,
-            'delivery_date': delivery_date,
             'delivery_time': delivery_time,
+            'delivery_date': delivery_date,
             'drop_of_location': drop_of_location,
             'team': team
         }
@@ -65,8 +65,9 @@ def home(request):
         # print(request.POST)
 
         request.session['user_personal_data'] = user_personal_data
-        request.session['data'] = json.dumps(data, cls=DjangoJSONEncoder)
-        print(json.dumps(data, cls=DjangoJSONEncoder), user_personal_data)
+        request.session['food_data'] = data['food_data']
+        request.session['total_food_price'] = data['total_food_price']
+        # print(json.dumps(data, cls=DjangoJSONEncoder), user_personal_data)
         return redirect('pizza:invoice_payment')
 
     return render(request, 'index.html', context)
