@@ -1,7 +1,10 @@
+import json
+
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
+from django.core.serializers.json import DjangoJSONEncoder
 
 from .shortcuts import check_food_qty_len
 
@@ -60,9 +63,11 @@ def home(request):
         #     return render(request, 'index.html', context)
 
         # print(request.POST)
+
         request.session['user_personal_data'] = user_personal_data
-        request.session['data'] = data
-        return render(request, 'invoice.html', context)
+        request.session['data'] = json.dumps(data, cls=DjangoJSONEncoder)
+        print(json.dumps(data, cls=DjangoJSONEncoder), user_personal_data)
+        return redirect('pizza:invoice_payment')
 
     return render(request, 'index.html', context)
 

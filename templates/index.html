@@ -754,7 +754,8 @@
                             <div class="col-1 float-left"><input type="checkbox" name="bread" value="{{ bread.id }}">
                             </div>
                             <div class="col-7 float-left">
-                                <input type="number" name="bread_qty" placeholder=" If yes enter quantity" min="1">
+                                <input type="number" name="bread_qty_{{ bread.id }}"
+                                       placeholder=" If yes enter quantity" min="1">
                             </div>
                         </div>
                     </div>
@@ -801,7 +802,8 @@
                             <div class="col-1 float-left"><input type="checkbox" name="wing" value="{{ wing.id }}">
                             </div>
                             <div class="col-7 float-left">
-                                <input type="number" name="wing_qty" placeholder=" If yes enter quantity" min="1">
+                                <input type="number" name="wing_qty_{{ wing.id }}" placeholder=" If yes enter quantity"
+                                       min="1">
                             </div>
                         </div>
                     </div>
@@ -849,7 +851,8 @@
                             <div class="col-1 float-left"><input type="checkbox" name="wings_sauce"
                                                                  value="{{ wing_sauce.id }}"></div>
                             <div class="col-7 float-left">
-                                <input type="number" name="wings_sauce_qty" placeholder=" If yes enter quantity"
+                                <input type="number" name="wings_sauce_qty_{{ wing_sauce.id }}"
+                                       placeholder=" If yes enter quantity"
                                        min="1">
                             </div>
                         </div>
@@ -949,7 +952,8 @@
                             <div class="col-1 float-left"><input type="checkbox" name="salad" value="{{ salad.id }}">
                             </div>
                             <div class="col-7 float-left">
-                                <input type="number" name="salad_qty" placeholder=" If yes enter quantity" min="1">
+                                <input type="number" name="salad_qty_{{ salad.id }}"
+                                       placeholder=" If yes enter quantity" min="1">
                             </div>
                         </div>
                     </div>
@@ -1023,7 +1027,8 @@
                             <div class="col-1 float-left"><input type="checkbox" name="salad_dressing"
                                                                  value="{{ salad_dressing.id }}"></div>
                             <div class="col-7 float-left">
-                                <input type="number" name="salad_dressing_qty" placeholder=" If yes enter quantity"
+                                <input type="number" name="salad_dressing_qty_{{ salad_dressing.id }}"
+                                       placeholder=" If yes enter quantity"
                                        min="1">
                             </div>
                         </div>
@@ -1110,7 +1115,8 @@
                             <div class="col-1 float-left"><input type="checkbox" name="dessert"
                                                                  value="{{ dessert.id }}"></div>
                             <div class="col-6 float-left">
-                                <input type="number" name="dessert_qty" placeholder=" If yes enter quantity" min="1">
+                                <input type="number" name="dessert_qty_{{ dessert.id }}"
+                                       placeholder=" If yes enter quantity" min="1">
                             </div>
                         </div>
                     </div>
