@@ -4,8 +4,11 @@
     <list default="true" id="504b17e7-de2e-40b6-9b88-e12e59e5d529" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pizza/shortcuts.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/shortcuts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pizza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wg_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wg_project/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,12 +18,21 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="e9050cc4-83d5-4ff5-8a33-eb33ce308d27" />
   <component name="ProjectId" id="1fflvAWQfEjc5etKGQOhI3Vgnry" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -71,7 +83,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -88,11 +100,16 @@
       <workItem from="1596691928999" duration="14935000" />
       <workItem from="1596730619396" duration="1614000" />
       <workItem from="1596744636044" duration="7873000" />
+      <workItem from="1596832843853" duration="7575000" />
+      <workItem from="1596874275622" duration="2360000" />
+      <workItem from="1596878574487" duration="1103000" />
+      <workItem from="1596881565001" duration="3271000" />
+      <workItem from="1596907096380" duration="1277000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="28" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596741804943">
@@ -104,15 +121,15 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="442" y="171" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1596737535995" />
-    <state x="462" y="129" width="424" height="491" key="FileChooserDialogImpl" timestamp="1596637738624">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="462" y="124" width="424" height="491" key="FileChooserDialogImpl" timestamp="1596823109802">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="462" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1596617851321" />
+    <state x="462" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1596823109802" />
     <state x="462" y="129" width="424" height="491" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1596637738624" />
-    <state x="184" y="15" width="1022" height="737" key="SettingsEditor" timestamp="1596637745721">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="184" y="14" width="1022" height="737" key="SettingsEditor" timestamp="1596823117193">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1596617856691" />
+    <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1596823117193" />
     <state x="184" y="15" width="1022" height="737" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1596637745721" />
   </component>
 </project>
