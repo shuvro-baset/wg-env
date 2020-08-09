@@ -53,17 +53,6 @@ def home(request):
             'team': team
         }
 
-        # pizzas = request.POST.getlist('pizzas', None)
-        # pizzas_qty = request.POST.getlist('pizzas_qty', None)
-        # if len(pizzas) == 0:
-        #     messages.add_message(request, messages.WARNING, 'Please select at least one pizza and quantity first.')
-        #     return render(request, 'index.html', context)
-        # elif len(pizzas) != len(pizzas_qty):
-        #     messages.add_message(request, messages.WARNING, 'Pizza Quantity not given properly!')
-        #     return render(request, 'index.html', context)
-
-        # print(request.POST)
-
         request.session['user_personal_data'] = user_personal_data
         request.session['food_data'] = data['food_data']
         request.session['total_food_price'] = data['total_food_price']
@@ -74,4 +63,6 @@ def home(request):
 
 
 def invoice_payment(request):
+    if 'food_data' not in request.session or len(request.session['food_data']) == 0:
+        return redirect('pizza:home')
     return render(request, 'invoice.html', {})
