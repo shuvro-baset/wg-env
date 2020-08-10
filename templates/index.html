@@ -367,14 +367,13 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center text-box"> 1000 Degrees Pizza of Winter Garden (only) - NBA</h1>
+            <h1 class="text-center text-box"> 1000 Degrees Pizza of Winter Garden</h1>
             <br><br>
 
         </div>
         <div class="col-12 shadow p-3 mb-5 bg-white rounded">
-            <h4>Order form exclusively for the NBA</h4>
 
-            <h4>Our pizzas are authentic Neapolitan style pizza coming in the 10" and the 14" style.</h4>
+            <h3>Our pizzas are authentic Neapolitan style pizza coming in the 10" and the 14" style.</h3>
 
             <p>1000 Degrees Pizza of Winter Garden <br>
                 13599 West Colonial Drive, Winter Garden 34786 <br>
@@ -400,7 +399,7 @@
     <div class="row">
         <form class="shadow p-3 mb-5 bg-white rounded" method="post"
               action="{% url 'pizza:home' %}">{% csrf_token %}
-            <h2>Before Order a pizza Please fill up this form.</h2>
+            <h3>Before Order a pizza Please fill up this form.</h3>
             <p>Email is only required for invoicing and receipt. Will not be used otherwise or shared without
                 your permission.
                 Orders should be 24 -48 hours in advance. Individual orders, please complete the form and we
@@ -509,7 +508,7 @@
             <section>
 
                 <div>
-                    <h1 class="text-center">What Would You Like?</h1>
+                    <h3 class="text-center">What Would You Like?</h3>
                     <h5>Make your order selections below. Be sure to let us know of any special instructions
                         and/or
                         quantities after you have made your selection.</h5>
@@ -520,7 +519,7 @@
             </section>
             <section class="shadow p-3 mb-5 bg-white rounded">
 
-                <h4 class="text-center">Order - Pizza </h4>
+                <h4 class="text-center text-light bg-danger rounded">Order - Pizza </h4>
                 <div class="row">
                     <div class="col-12">
                         <table class="table table-borderless">
@@ -693,7 +692,7 @@
             </section>
 
             <section class="shadow p-3 mb-5 bg-white rounded">
-                <h2 class="text-center">Gluten Free and Cauliflower Crust </h2>
+                <h3 class="text-center">Gluten Free and Cauliflower Crust </h3>
                 <p> * 10" available for an additional $2.00</p>
                 {% for gluten_cauliflower in gluten_cauliflowers %}
                     <div class="row">
@@ -742,7 +741,7 @@
                 {#                </div>#}
             </section>
             <section class="shadow p-3 mb-5 bg-white rounded">
-                <h2 class="text-center">Appetizers - Breads</h2>
+                <h3 class="text-center">Appetizers - Breads</h3>
                 {% for bread in breads %}
                     <div class="row">
                         <div class="col-12">
@@ -790,7 +789,7 @@
 
             </section>
             <section class="shadow p-3 mb-5 bg-white rounded">
-                <h2 class="text-center">Appetizers - Wings</h2>
+                <h3 class="text-center">Appetizers - Wings</h3>
                 {% for wing in wings %}
                     <div class="row">
                         <div class="col-12">
@@ -838,7 +837,7 @@
 
             </section>
             <section class="shadow p-3 mb-5 bg-white rounded">
-                <h2 class="text-center"> Appetizers - Wings Sauces</h2>
+                <h3 class="text-center"> Appetizers - Wings Sauces</h3>
                 <h6> * Extra Sauces on the side $1.00(if needed)</h6>
                 {% for wing_sauce in wing_sauces %}
                     <div class="row">
@@ -940,7 +939,7 @@
 
             </section>
             <section class="shadow p-3 mb-5 bg-white rounded">
-                <h2 class="text-center">Salads</h2>
+                <h3 class="text-center">Salads</h3>
                 {% for salad in salads %}
                     <div class="row">
                         <div class="col-12">
@@ -1014,7 +1013,7 @@
 
             </section>
             <section class="shadow p-3 mb-5 bg-white rounded">
-                <h2 class="text-center">Salad Dressings (Optional)</h2>
+                <h3 class="text-center">Salad Dressings (Optional)</h3>
                 <h6> * Extra dressings on the side $1.00 (if needed)</h6>
                 {% for salad_dressing in salad_dressings %}
                     <div class="row">
@@ -1103,7 +1102,7 @@
 
             </section>
             <section class="shadow p-3 mb-5 bg-white rounded">
-                <h2 class="text-center">Desserts</h2>
+                <h3 class="text-center">Desserts</h3>
                 {% for dessert in desserts %}
                     <div class="row">
                         <div class="col-12">
