@@ -441,11 +441,31 @@
                     {#                    <input type="time" class="form-control required " name="delivery_time"#}
                     {#                           id="delivery_time"#}
                     {#                           placeholder="Select Delivery Time" required>#}
-                    <select name="delivery_time" id="delivery_time" required>
-                        <option value="zero">00</option>
+                    <select name="delivery_time_hour" id="delivery_time_hour" required>
+                        <option value="zero">Hour</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select name="delivery_time_min" id="delivery_time_min" required>
+                        <option value="">Min</option>
+                        <option value="zero">0</option>
                         <option value="fifteen">15</option>
                         <option value="thirty">30</option>
                         <option value="fourty_five">45</option>
+                    </select>
+                    <select name="delivery_time_m" id="delivery_time_m" required>
+                        <option value="am">am</option>
+                        <option value="pm">pm</option>
                     </select>
                 </div>
                 <div class="form-group">
