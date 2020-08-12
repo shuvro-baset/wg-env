@@ -1,4 +1,6 @@
+from decimal import Decimal
 import json
+from unicodedata import decimal
 
 from django.contrib import messages
 from django.shortcuts import render, redirect
@@ -52,11 +54,19 @@ def home(request):
             'drop_of_location': drop_of_location,
             'team': team
         }
+        service_charge = (data['total_food_price'] * 20) / 100
+        tax_fee = (data['total_food_price'] * Decimal(6.50)) / 100
+        total_payable = data['total_food_price'] + service_charge + Decimal(10.00) + tax_fee
+        print(total_payable)
 
         request.session['user_personal_data'] = user_personal_data
         request.session['food_data'] = data['food_data']
-        request.session['total_food_price'] = data['total_food_price']
-        # print(json.dumps(data, cls=DjangoJSONEncoder), user_personal_data)
+        request.session['total_food_price'] = str(data['total_food_price'])
+        request.session['service_charge'] = str(service_charge)
+        request.session['delivery_fee'] = 10.00
+        request.session['tax_fee'] = str(tax_fee)
+
+        request.session['total_payable'] = str(total_payable)
         return redirect('pizza:invoice_payment')
 
     return render(request, 'index.html', context)

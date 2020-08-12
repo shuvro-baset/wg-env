@@ -52,11 +52,13 @@ def check_food_qty_len(request):
             temp_data = {}
             wings_sauce_qty = 'wings_sauce_qty_' + str(wings_sauce_data.id)
             input_wings_sauce_qty = request.POST.get(wings_sauce_qty, None)
+            special_request = request.POST.get('wings_sauce_special_request', None)
             if input_wings_sauce_qty is None or input_wings_sauce_qty == '':
                 return False, 'Wings Sauces Quantity not given properly!', data
             temp_data['name'] = wings_sauce_data.name
             temp_data['total_price'] = str(wings_sauce_data.price * decimal(input_wings_sauce_qty))
             temp_data['qty'] = input_wings_sauce_qty
+            temp_data['special_request'] = special_request
             food_data.append(temp_data)
             total_food_price += wings_sauce_data.price * decimal(input_wings_sauce_qty)
 
@@ -67,11 +69,13 @@ def check_food_qty_len(request):
             temp_data = {}
             salad_qty = 'salad_qty_' + str(salad_data.id)
             input_salad_qty = request.POST.get(salad_qty, None)
+            special_request = request.POST.get('salad_special_request', None)
             if input_salad_qty is None or input_salad_qty == '':
                 return False, 'Salads Quantity not given properly!', data
             temp_data['name'] = salad_data.name
             temp_data['total_price'] = str(salad_data.price * decimal(input_salad_qty))
             temp_data['qty'] = input_salad_qty
+            temp_data['special_request'] = special_request
             food_data.append(temp_data)
             total_food_price += salad_data.price * decimal(input_salad_qty)
 
@@ -99,11 +103,13 @@ def check_food_qty_len(request):
             temp_data = {}
             dessert_qty = 'dessert_qty_' + str(dessert_data.id)
             input_dessert_qty = request.POST.get(dessert_qty, None)
+            special_request = request.POST.get('dessert_special_request', None)
             if input_dessert_qty is None or input_dessert_qty == '':
                 return False, 'Desserts Quantity not given properly!', data
             temp_data['name'] = dessert_data.name
             temp_data['total_price'] = str(dessert_data.price * decimal(input_dessert_qty))
             temp_data['qty'] = input_dessert_qty
+            temp_data['special_request'] = special_request
             food_data.append(temp_data)
             total_food_price += dessert_data.price * decimal(input_dessert_qty)
 
@@ -142,7 +148,7 @@ def check_food_qty_len(request):
     # print('food data: ', food_data)
     data = {
         'food_data': food_data,
-        'total_food_price': str(total_food_price)
+        'total_food_price': total_food_price
     }
 
     return True, '', data
