@@ -74,7 +74,7 @@
             <table class="table table-borderless div-box">
                 <thead>
                 <tr>
-                    <th scope="col">SL No</th>
+                    {#                    <th scope="col">SL No</th>#}
                     <th scope="col">Menu</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
@@ -84,17 +84,33 @@
                 {% if request.session.food_data %}
                     {% for data in request.session.food_data %}
                         <tr>
-                            <td> {{ forloop.counter }}</td>
+                            {#                            <td> {{ forloop.counter }}</td>#}
                             <td>{{ data.name }}</td>
                             <td>{{ data.qty }}</td>
-                            <td>{{ data.total_price }}$</td>
+                            <td>${{ data.total_price }}</td>
                         </tr>
                     {% endfor %}
                 {% endif %}
 
+
                 <tr>
-                    <td colspan="3">Total Price</td>
-                    <td>{{ request.session.total_food_price }}$</td>
+                    <td colspan="2">Total Price</td>
+                    <td>${{ request.session.total_food_price }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                       service charge</td>
+                    <td>$ total_food_price * 100/20 </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Delivery fee</td>
+                    <td>$10</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Tax fee</td>
+                    <td>$ session.total_food_price * 100/6.5</td>
                 </tr>
                 </tbody>
             </table>

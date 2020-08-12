@@ -55,7 +55,7 @@
             <div class="col-md-12">
 
                 <div id="mdb-lightbox-ui">
-                    <h1 class="text-center text-box">Pizza Gallery</h1>
+                    <h1 class="text-center text-box">Pizza Menu</h1>
                     <br><br>
                 </div>
 
@@ -290,7 +290,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div id="mdb-lightbox-ui">
-                    <h1 class="text-center text-box">Others Gallery</h1>
+                    <h1 class="text-center text-box">Additional Menu Items</h1>
                     <br><br>
                 </div>
                 <div class="mdb-lightbox no-margin">
@@ -424,7 +424,7 @@
                         Number:</label>
                     <input type="tel" class="form-control required " name="phone_number"
                            id="phone_number"
-                           placeholder="Enter your contact Number" maxlength="12" minlength="11" required>
+                           placeholder="XXX-XXX-XXXX" maxlength="10" required>
                 </div>
                 <div class="form-group">
                     <label for="delivery_date"><label class="text-danger font-weight-bold">*</label>Delivery
@@ -432,13 +432,21 @@
                     <input type="date" class="form-control required " name="delivery_date"
                            id="delivery_date"
                            placeholder="Select Delivery Date" required>
+
+
                 </div>
                 <div class="form-group">
                     <label for="delivery_time"><label class="text-danger font-weight-bold">*</label>Delivery
                         Time:</label>
-                    <input type="time" class="form-control required " name="delivery_time"
-                           id="delivery_time"
-                           placeholder="Select Delivery Time" required>
+                    {#                    <input type="time" class="form-control required " name="delivery_time"#}
+                    {#                           id="delivery_time"#}
+                    {#                           placeholder="Select Delivery Time" required>#}
+                    <select name="delivery_time" id="delivery_time" required>
+                        <option value="zero">00</option>
+                        <option value="fifteen">15</option>
+                        <option value="thirty">30</option>
+                        <option value="fourty_five">45</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="drop_of_location"><label class="text-danger font-weight-bold">*</label>Drop off
@@ -684,7 +692,7 @@
                             {#                                <td><input type="checkbox" name="pizzas" value="Bike">#}
                             {#                                    <label for="30"> Lasagna 14" $17.95</label></td>#}
                             {#                                <td><input type="text" placeholder="Enter Quantity"></td>#}
-{#                            </tr>#}
+                            {#                            </tr>#}
                             </tbody>
                         </table>
                     </div>
@@ -697,14 +705,15 @@
                 {% for gluten_cauliflower in gluten_cauliflowers %}
                     <div class="row">
                         <div class="col-12">
-                            <div class="col-3 float-left">
+                            <div class="col-6 float-left">
+                                <input type="checkbox" name="gluten_cauliflower"
+                                       value="{{ gluten_cauliflower.id }}">
                                 <label class="radio-inline">
-                                    {{ forloop.counter }}. {{ gluten_cauliflower.name }}
+                                    {{ gluten_cauliflower.name }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="gluten_cauliflower"
-                                                                 value="{{ gluten_cauliflower.id }}"></div>
-                            <div class="col-8 float-left">
+                            {#                            <div class="col-1 float-left"></div>#}
+                            <div class="col-6 float-left">
                                 <input type="number" name="gluten_cauliflower_qty_{{ gluten_cauliflower.id }}"
                                        placeholder=" If yes enter quantity"
                                        min="1">
@@ -745,18 +754,20 @@
                 {% for bread in breads %}
                     <div class="row">
                         <div class="col-12">
-                            <div class="col-4 float-left">
+                            <div class="col-6 float-left">
+                                <input type="checkbox" name="bread" value="{{ bread.id }}">
                                 <label class="radio-inline">
-                                    {{ forloop.counter }}. {{ bread.name }} ${{ bread.price }}
+                                    {{ bread.name }} ${{ bread.price }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="bread" value="{{ bread.id }}">
-                            </div>
-                            <div class="col-7 float-left">
+                            {#                            <div class="col-1 float-left">#}
+                            <div class="col-6 float-left">
                                 <input type="number" name="bread_qty_{{ bread.id }}"
                                        placeholder=" If yes enter quantity" min="1">
                             </div>
                         </div>
+
+
                     </div>
                 {% endfor %}
                 {#                <div class="row">#}
@@ -793,18 +804,19 @@
                 {% for wing in wings %}
                     <div class="row">
                         <div class="col-12">
-                            <div class="col-4 float-left">
+                            <div class="col-6 float-left">
                                 <label class="radio-inline">
-                                    {{ forloop.counter }}. {{ wing.name }} ${{ wing.price }}
+                                    <input type="checkbox" name="wing" value="{{ wing.id }}">
+                                    {{ wing.name }} ${{ wing.price }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="wing" value="{{ wing.id }}">
-                            </div>
-                            <div class="col-7 float-left">
+                            {#                            <div class="col-1 float-left">#}
+                            <div class="col-6 float-left">
                                 <input type="number" name="wing_qty_{{ wing.id }}" placeholder=" If yes enter quantity"
                                        min="1">
                             </div>
                         </div>
+
                     </div>
                 {% endfor %}
                 {#                <div class="row">#}
@@ -842,14 +854,15 @@
                 {% for wing_sauce in wing_sauces %}
                     <div class="row">
                         <div class="col-12">
-                            <div class="col-4 float-left">
+                            <div class="col-6 float-left">
+                                <input type="checkbox" name="wings_sauce"
+                                       value="{{ wing_sauce.id }}">
                                 <label class="radio-inline">
-                                    {{ forloop.counter }}. {{ wing_sauce.name }}
+                                    {{ wing_sauce.name }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="wings_sauce"
-                                                                 value="{{ wing_sauce.id }}"></div>
-                            <div class="col-7 float-left">
+                            {#                            <div class="col-1 float-left"></div>#}
+                            <div class="col-6 float-left">
                                 <input type="number" name="wings_sauce_qty_{{ wing_sauce.id }}"
                                        placeholder=" If yes enter quantity"
                                        min="1">
@@ -857,6 +870,15 @@
                         </div>
                     </div>
                 {% endfor %}
+
+
+                <div class="row ">
+                    <div class="col-12">
+                        <label for="w3review"> (Note sauce details below if needed)</label><br>
+                    </div>
+                    <textarea id="w3review" name="special_request" rows="3" cols="100"></textarea>
+                </div>
+
                 {#                <div class="row">#}
                 {#                    <div class="col-12">#}
                 {#                        <div class="col-4 float-left">#}
@@ -943,20 +965,27 @@
                 {% for salad in salads %}
                     <div class="row">
                         <div class="col-12">
-                            <div class="col-4 float-left">
+                            <div class="col-6 float-left">
+                                <input type="checkbox" name="salad" value="{{ salad.id }}">
                                 <label class="radio-inline">
                                     {{ forloop.counter }}. {{ salad.name }} ${{ salad.price }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="salad" value="{{ salad.id }}">
-                            </div>
-                            <div class="col-7 float-left">
+                            {#                            <div class="col-1 float-left">                            </div>#}
+                            <div class="col-6 float-left">
                                 <input type="number" name="salad_qty_{{ salad.id }}"
                                        placeholder=" If yes enter quantity" min="1">
                             </div>
                         </div>
                     </div>
                 {% endfor %}
+                <div class="row ">
+                    <div class="col-12">
+                        <label for="w3review"> (Note sauce details below if needed)</label><br>
+                    </div>
+                    <textarea id="w3review" name="special_request" rows="3" cols="100"></textarea>
+                </div>
+                {#                </div>#}
                 {#                <div class="row">#}
                 {#                    <div class="col-12">#}
                 {#                        <div class="col-4 float-left">#}
@@ -1018,14 +1047,15 @@
                 {% for salad_dressing in salad_dressings %}
                     <div class="row">
                         <div class="col-12">
-                            <div class="col-4 float-left">
+                            <div class="col-6 float-left">
+                                <input type="checkbox" name="salad_dressing"
+                                       value="{{ salad_dressing.id }}">
                                 <label class="radio-inline">
-                                    {{ forloop.counter }}. {{ salad_dressing.name }}
+                                    {{ salad_dressing.name }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="salad_dressing"
-                                                                 value="{{ salad_dressing.id }}"></div>
-                            <div class="col-7 float-left">
+                            {#                            <div class="col-1 float-left"></div>#}
+                            <div class="col-6 float-left">
                                 <input type="number" name="salad_dressing_qty_{{ salad_dressing.id }}"
                                        placeholder=" If yes enter quantity"
                                        min="1">
@@ -1106,13 +1136,14 @@
                 {% for dessert in desserts %}
                     <div class="row">
                         <div class="col-12">
-                            <div class="col-5 float-left">
+                            <div class="col-6 float-left">
+                                <input type="checkbox" name="dessert"
+                                       value="{{ dessert.id }}">
                                 <label class="radio-inline">
-                                    {{ forloop.counter }}. {{ dessert.name }} ${{ dessert.price }}
+                                    {{ dessert.name }} ${{ dessert.price }}
                                 </label>
                             </div>
-                            <div class="col-1 float-left"><input type="checkbox" name="dessert"
-                                                                 value="{{ dessert.id }}"></div>
+                            {#                            <div class="col-1 float-left"></div>#}
                             <div class="col-6 float-left">
                                 <input type="number" name="dessert_qty_{{ dessert.id }}"
                                        placeholder=" If yes enter quantity" min="1">
