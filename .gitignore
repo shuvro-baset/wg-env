@@ -155,4 +155,5 @@ temp
 .idea/workspace.xml
 
 ngrok.exe
-wg_project/__pycache__/
+wg_project/__pycache__
+pizza/__pycache__
