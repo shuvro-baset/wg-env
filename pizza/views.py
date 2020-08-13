@@ -42,22 +42,30 @@ def home(request):
         name = request.POST.get('name', None)
         phone_number = request.POST.get('phone_number', None)
         delivery_date = request.POST.get('delivery_date', None)
-        delivery_time = request.POST.get('delivery_time', None)
+        delivery_time_hour = request.POST.get('delivery_time_hour', None)
+        delivery_time_min = request.POST.get('delivery_time_min', None)
+        delivery_time_ampm = request.POST.get('delivery_time_ampm', None)
         drop_of_location = request.POST.get('drop_of_location', None)
+        drop_of_contact = request.POST.get('drop_of_contact', None)
         team = request.POST.get('team', None)
+        if '' or None in [email, name, phone_number, delivery_date, delivery_time_hour, delivery_time_min,
+                          delivery_time_ampm, drop_of_location, team]:
+            messages.add_message(request, messages.WARNING, 'User data')
+            return render(request, 'index.html', context)
+
         user_personal_data = {
             'email': email,
             'name': name,
             'phone_number': phone_number,
-            'delivery_time': delivery_time,
+            'delivery_time': delivery_time_hour + ':' + delivery_time_min + ' ' + delivery_time_ampm,
             'delivery_date': delivery_date,
             'drop_of_location': drop_of_location,
+            'drop_of_contact': drop_of_contact,
             'team': team
         }
         service_charge = (data['total_food_price'] * 20) / 100
         tax_fee = (data['total_food_price'] * Decimal(6.50)) / 100
         total_payable = data['total_food_price'] + service_charge + Decimal(10.00) + tax_fee
-        print(total_payable)
 
         request.session['user_personal_data'] = user_personal_data
         request.session['food_data'] = data['food_data']
