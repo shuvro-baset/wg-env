@@ -152,3 +152,8 @@ def check_food_qty_len(request):
     }
 
     return True, '', data
+
+
+# Todo message body
+def message_body(data):
+    return data

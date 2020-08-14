@@ -1,10 +1,14 @@
+from datetime import datetime
 from decimal import Decimal
 import json
 from unicodedata import decimal
 
 from django.contrib import messages
+from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .send_data_to_spread_sheet import send_to_spreadsheet
+
 from .models import *
 from django.core.serializers.json import DjangoJSONEncoder
 
@@ -73,7 +77,6 @@ def home(request):
         request.session['service_charge'] = str(service_charge)
         request.session['delivery_fee'] = 10.00
         request.session['tax_fee'] = str(tax_fee)
-
         request.session['total_payable'] = str(total_payable)
         return redirect('pizza:invoice_payment')
 
@@ -84,3 +87,36 @@ def invoice_payment(request):
     if 'food_data' not in request.session or len(request.session['food_data']) == 0:
         return redirect('pizza:home')
     return render(request, 'invoice.html', {})
+
+
+def confirm_order(request):
+    if request.method == 'POST':
+        #  Todo Send Email start
+        mail_subject = "New order at " + str(datetime.ctime)
+        message = "str(request.session.get('food_data'))"
+        email = EmailMessage(mail_subject, message, to=["horib30009@brosj.net"])
+        # email.content_subtype = "html"
+        # email.send()
+        #  Todo Send Email end
+
+        #  Todo send data to spreadsheet start
+
+        order_data = "user_personal_data: " + str(request.session.get('user_personal_data')) + '\n'
+        "food_data: " + str(request.session.get('food_data')) + '\n'
+        "total_food_price: " + str(request.session.get('total_food_price')) + '\n'
+        "service_charge: " + str(request.session.get('service_charge')) + '\n'
+        "delivery_fee: " + str(request.session.get('delivery_fee')) + '\n'
+        "tax_fee: " + str(request.session.get('tax_fee')) + '\n'
+        "total_payable: " + str(request.session.get('total_payable'))
+        print(order_data)
+
+        send_to_spreadsheet(order_data)
+        #  Todo send data to spreadsheet end
+
+        messages.add_message(request, messages.SUCCESS, 'Oder successfully done! We will contact soon.')
+        # request.session.flush()
+        return redirect('pizza:home')
+
+    else:
+        # request.session.flush()
+        return redirect('pizza:home')
