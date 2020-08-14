@@ -119,9 +119,11 @@
 
         </div>
         <div class="col-12 text-right " style="padding-bottom: 50px">
-            <button class="btn btn-outline-danger font-weight-bold text-uppercase">
-                Order now
-            </button>
+            <form method="post" action="{% url 'pizza:confirm_order' %}">{% csrf_token %}
+                <button class="btn btn-outline-danger font-weight-bold text-uppercase" type="submit">
+                    Order now
+                </button>
+            </form>
         </div>
     </div>
 </div>

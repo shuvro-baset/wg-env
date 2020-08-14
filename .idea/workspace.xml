@@ -20,10 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="504b17e7-de2e-40b6-9b88-e12e59e5d529" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pizza/shortcuts.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/shortcuts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pizza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pizza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wg_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wg_project/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +63,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pizza" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,7 +74,11 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\wg_ENV\wg_project\pizza" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\wg_ENV\wg_project\pizza" />
       <recent name="I:\wg_ENV\wg_project" />
       <recent name="I:\wg_ENV\wg_project\templates" />
     </key>
@@ -122,7 +131,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -151,11 +160,13 @@
       <workItem from="1597222108204" duration="5483000" />
       <workItem from="1597257962049" duration="5000" />
       <workItem from="1597300884775" duration="272000" />
+      <workItem from="1597424076205" duration="8065000" />
+      <workItem from="1597437231594" duration="7351000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -188,10 +199,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="537" y="71" key="RollbackChangesDialog/0.0.1366.738@0.0.1366.738" timestamp="1597227109092" />
-    <state x="184" y="14" width="1022" height="737" key="SettingsEditor" timestamp="1596823117193">
+    <state x="184" y="14" width="1022" height="737" key="SettingsEditor" timestamp="1597441591766">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1596823117193" />
+    <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1597441591766" />
     <state x="184" y="15" width="1022" height="737" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1596637745721" />
     <state x="0" y="0" width="1006" height="571" key="dock-window-1" timestamp="1597220520397">
       <screen x="0" y="0" width="1366" height="738" />

@@ -157,3 +157,6 @@ temp
 ngrok.exe
 wg_project/__pycache__
 pizza/__pycache__
+
+# google sheet json credentials
+order_data_list.json

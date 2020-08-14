@@ -128,12 +128,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-# EMAIL_BACKEND = env(
-#     "EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend"
-# )
-# EMAIL_HOST = env.str('EMAIL_HOST', default="mail.abc.org")
-# EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS', default=True)
-# EMAIL_PORT = env.int('EMAIL_PORT', default=587)
-# EMAIL_HOST_USER = env.str('EMAIL_HOST_USER', default="activation@abc.org")
-# EMAIL_HOST_PASSWORD = env.str('EMAIL_HOST_PASSWORD', default="abc@")
-# DEFAULT_FROM_EMAIL = env.str('DEFAULT_FROM_EMAIL', default="activation@abc.org")
+# =========== Email ============
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS", default=False)
+EMAIL_HOST_USER = env.str("EMAIL_HOST_USER", default="")
+EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD", default="")
+EMAIL_HOST = env.str("EMAIL_HOST", default="mail.1000catering.com")
+EMAIL_PORT = env.int("EMAIL_PORT", default=2525)
+DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL", default="noreply@1000catering.com")
+# =========== Email ============
