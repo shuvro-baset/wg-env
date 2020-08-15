@@ -1,6 +1,6 @@
 from unicodedata import decimal
 
-from django.db.models import Sum
+from django.template.loader import render_to_string
 
 from .models import *
 
@@ -155,5 +155,16 @@ def check_food_qty_len(request):
 
 
 # Todo message body
-def message_body(data):
-    return data
+def message_body(request):
+    message = render_to_string(
+        'email_invoice.html',
+        {"user_personal_data": request.session.get('user_personal_data'),
+         "food_data": request.session.get('food_data'),
+         "total_food_price": str(request.session.get('total_food_price')),
+         "service_charge": str(request.session.get('service_charge')),
+         "delivery_fee": request.session.get('delivery_fee'),
+         "tax_fee": str(request.session.get('tax_fee')),
+         "total_payable": str(request.session.get('total_payable'))
+         },
+    )
+    return message

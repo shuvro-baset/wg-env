@@ -13,7 +13,7 @@ from .send_data_to_spread_sheet import send_to_spreadsheet
 from .models import *
 from django.core.serializers.json import DjangoJSONEncoder
 
-from .shortcuts import check_food_qty_len
+from .shortcuts import check_food_qty_len, message_body
 
 
 def home(request):
@@ -94,21 +94,21 @@ def confirm_order(request):
     if request.method == 'POST':
         #  Todo Send Email start
         mail_subject = "New order at " + str(datetime.ctime)
-        message = "str(request.session.get('food_data'))"
+        message = message_body(request)
         email = EmailMessage(mail_subject, message, to=[settings.CATERING_EMAIL])
-        # email.content_subtype = "html"
+        email.content_subtype = "html"
         # email.send()
         #  Todo Send Email end
 
         #  Todo send data to spreadsheet start
-        order_data = "user_personal_data: " + str(request.session.get('user_personal_data')) + '\n'
-        "food_data: " + str(request.session.get('food_data')) + '\n'
-        "total_food_price: " + str(request.session.get('total_food_price')) + '\n'
-        "service_charge: " + str(request.session.get('service_charge')) + '\n'
-        "delivery_fee: " + str(request.session.get('delivery_fee')) + '\n'
-        "tax_fee: " + str(request.session.get('tax_fee')) + '\n'
-        "total_payable: " + str(request.session.get('total_payable'))
-        print(order_data)
+        order_data = {"user_personal_data": str(request.session.get('user_personal_data')),
+                      "food_data": str(request.session.get('food_data')),
+                      "total_food_price": str(request.session.get('total_food_price')),
+                      "service_charge": str(request.session.get('service_charge')),
+                      "delivery_fee": str(request.session.get('delivery_fee')),
+                      "tax_fee": str(request.session.get('tax_fee')),
+                      "total_payable": str(request.session.get('total_payable'))
+                      }
         send_to_spreadsheet(order_data)
         #  Todo send data to spreadsheet end
 
