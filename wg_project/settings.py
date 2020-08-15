@@ -29,7 +29,8 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
+# ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
+ALLOWED_HOSTS = ['1000catering.com', 'www.1000catering.com', '127.0.0.1']
 MODE = env.str('MODE', default='production')
 
 # Application definition
