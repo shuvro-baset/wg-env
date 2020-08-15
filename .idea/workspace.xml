@@ -20,14 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="504b17e7-de2e-40b6-9b88-e12e59e5d529" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pizza/migrations/0002_auto_20200807_0104.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pizza/migrations/0003_auto_20200807_0108.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pizza/migrations/0004_auto_20200807_0110.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pizza/migrations/0005_delete_droplocation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pizza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wg_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wg_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wg_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/wg_project/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +161,7 @@
       <workItem from="1597479186141" duration="3059000" />
       <workItem from="1597483530976" duration="3903000" />
       <workItem from="1597497610549" duration="3114000" />
-      <workItem from="1597506688747" duration="8790000" />
+      <workItem from="1597506688747" duration="11311000" />
     </task>
     <servers />
   </component>
