@@ -3,6 +3,7 @@ from decimal import Decimal
 import json
 from unicodedata import decimal
 
+from django.conf import settings
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
@@ -94,13 +95,12 @@ def confirm_order(request):
         #  Todo Send Email start
         mail_subject = "New order at " + str(datetime.ctime)
         message = "str(request.session.get('food_data'))"
-        email = EmailMessage(mail_subject, message, to=["horib30009@brosj.net"])
+        email = EmailMessage(mail_subject, message, to=[settings.CATERING_EMAIL])
         # email.content_subtype = "html"
         # email.send()
         #  Todo Send Email end
 
         #  Todo send data to spreadsheet start
-
         order_data = "user_personal_data: " + str(request.session.get('user_personal_data')) + '\n'
         "food_data: " + str(request.session.get('food_data')) + '\n'
         "total_food_price: " + str(request.session.get('total_food_price')) + '\n'
@@ -109,7 +109,6 @@ def confirm_order(request):
         "tax_fee: " + str(request.session.get('tax_fee')) + '\n'
         "total_payable: " + str(request.session.get('total_payable'))
         print(order_data)
-
         send_to_spreadsheet(order_data)
         #  Todo send data to spreadsheet end
 
