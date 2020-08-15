@@ -23,8 +23,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pizza/send_data_to_spread_sheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/send_data_to_spread_sheet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pizza/shortcuts.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/shortcuts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pizza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pizza/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wg_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wg_project/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pizza" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -70,13 +70,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="I:\wg_ENV\wg_project\pizza" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\wg_ENV\wg_project\templates" />
       <recent name="I:\wg_ENV\wg_project\pizza" />
       <recent name="I:\wg_ENV\wg_project" />
-      <recent name="I:\wg_ENV\wg_project\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\wg_ENV\wg_project\pizza" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.wg-env">
@@ -159,7 +159,8 @@
       <workItem from="1597424076205" duration="8065000" />
       <workItem from="1597437231594" duration="7448000" />
       <workItem from="1597479186141" duration="3059000" />
-      <workItem from="1597483530976" duration="1101000" />
+      <workItem from="1597483530976" duration="3903000" />
+      <workItem from="1597497610549" duration="1696000" />
     </task>
     <servers />
   </component>

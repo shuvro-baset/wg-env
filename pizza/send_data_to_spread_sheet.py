@@ -16,8 +16,10 @@ def send_to_spreadsheet(order_data):
     # Make sure you use the right name here.
     sheet = client.open("order_data_list").sheet1
     try:
-        row = [order_data, ]
-        index = 1
+        row = [order_data['user_personal_data'], order_data['food_data'], order_data['total_food_price'],
+               order_data['service_charge'], order_data['delivery_fee'], order_data['tax_fee'],
+               order_data['total_payable'], ]
+        index = 2
         sheet.insert_row(row, index)
     except Exception as e:
         print(e)
