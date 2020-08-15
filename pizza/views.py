@@ -95,9 +95,9 @@ def confirm_order(request):
         #  Todo Send Email start
         mail_subject = "New order at " + str(datetime.ctime)
         message = message_body(request)
-        email = EmailMessage(mail_subject, message, to=[settings.CATERING_EMAIL])
+        email = EmailMessage(mail_subject, message, to=["bemidov514@brosj.net"])
         email.content_subtype = "html"
-        # email.send()
+        email.send()
         #  Todo Send Email end
 
         #  Todo send data to spreadsheet start
