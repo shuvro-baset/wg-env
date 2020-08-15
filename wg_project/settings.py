@@ -76,13 +76,13 @@ WSGI_APPLICATION = 'wg_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-DATABASES = {"default": env.db()}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+# DATABASES = {"default": env.db()}
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
@@ -136,7 +136,7 @@ EMAIL_HOST_USER = env.str("EMAIL_HOST_USER", default="noreply@1000catering.com")
 EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD", default="")
 EMAIL_HOST = env.str("EMAIL_HOST", default="mail.1000catering.com")
 EMAIL_PORT = env.int("EMAIL_PORT", default=2525)
-DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL", default="noreply@1000catering.com")
+DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL", default="order@1000catering.com")
 # =========== Email ============
 
 CATERING_EMAIL = env.str("CATERING_EMAIL", default="wgpizza1000@gmail.com")
