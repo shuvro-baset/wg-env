@@ -113,9 +113,9 @@ def confirm_order(request):
         #  Todo send data to spreadsheet end
 
         messages.add_message(request, messages.SUCCESS, 'Oder successfully done! We will contact soon.')
-        # request.session.flush()
+        request.session.flush()
         return redirect('pizza:home')
 
     else:
-        # request.session.flush()
+        request.session.flush()
         return redirect('pizza:home')
