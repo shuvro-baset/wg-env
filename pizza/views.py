@@ -92,6 +92,8 @@ def invoice_payment(request):
 
 def confirm_order(request):
     if request.method == 'POST':
+        if 'food_data' not in request.session or len(request.session['food_data']) == 0:
+            return redirect('pizza:home')
         #  Todo Send Email start
         mail_subject = "New order at " + str(datetime.ctime)
         message = message_body(request)
