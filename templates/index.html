@@ -1275,10 +1275,10 @@
 
 
 <footer>
-    <h6 class="text-center bg-dark text-light">© 2020 - 2020 Baset.</h6>
+    {% now "Y" as current_year %}
+    <h6 class="text-center bg-dark text-light mb-auto">© 2020 - {{ current_year }}</h6>
 </footer>
 <script src="{% static 'gallery.js' %}"></script>
-
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
