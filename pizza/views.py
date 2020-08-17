@@ -95,7 +95,7 @@ def confirm_order(request):
         if 'food_data' not in request.session or len(request.session['food_data']) == 0:
             return redirect('pizza:home')
         #  Todo Send Email start
-        mail_subject = "New order at " + str(datetime.ctime)
+        mail_subject = "New order of " + str(request.session['user_personal_data']['name'])
         message = message_body(request)
         email = EmailMessage(mail_subject, message, to=[settings.CATERING_EMAIL])
         email.content_subtype = "html"
