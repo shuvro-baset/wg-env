@@ -114,7 +114,8 @@ def confirm_order(request):
         send_to_spreadsheet(order_data)
         #  Todo send data to spreadsheet end
 
-        messages.add_message(request, messages.SUCCESS, 'Oder successfully done! We will contact soon.')
+        messages.add_message(request, messages.SUCCESS,
+                             'Thank you for your order submission.  We will be sending you your invoice details shortly.')
         request.session.flush()
         return redirect('pizza:home')
 
