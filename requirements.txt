@@ -2,7 +2,7 @@ asgiref==3.2.10
 cachetools==4.1.1
 certifi==2020.6.20
 chardet==3.0.4
-Django==3.1
+Django==3.1.13
 django-environ==0.4.5
 google-auth==1.20.1
 google-auth-oauthlib==0.4.1
